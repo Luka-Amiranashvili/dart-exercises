@@ -1,3 +1,5 @@
+import 'dart:io';
+
 // exercises to help students practice variables, data types, and operators in Dart:
 void main() {
   sumNum();
@@ -102,3 +104,22 @@ void whichOne() {
 }
 
 // 10. Write a program that takes two numbers as input and calculates the area and perimeter of a rectangle.
+
+void rectangle() {
+  print("Enter the length of the rectangle:");
+  String? inputLength = stdin.readLineSync();
+  double length = double.parse(inputLength!);
+
+  // Ask user for width
+  print("Enter the width of the rectangle:");
+  String? inputWidth = stdin.readLineSync();
+  double width = double.parse(inputWidth!);
+
+  // Calculate area and perimeter
+  double area = length * width;
+  double perimeter = 2 * (length + width);
+
+  // Print results
+  print("Area of the rectangle: $area");
+  print("Perimeter of the rectangle: $perimeter");
+}
