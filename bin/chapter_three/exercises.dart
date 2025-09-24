@@ -3,6 +3,7 @@
 void main() {
   getFruits();
   numbers();
+  someStrings();
 }
 
 // 1. Create a list of 5 strings and print the third element.
@@ -37,15 +38,23 @@ void getFruits() {
   }
 }
 
+// 6. Create a list of numbers from 1 to 10 and print the sum of all the elements.
+
 void numbers() {
   var shnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   var sumArray = shnumbers.reduce((a, b) => a + b);
   print("This is for 6th exercise: $sumArray");
 }
 
-
-// 6. Create a list of numbers from 1 to 10 and print the sum of all the elements.
 // 7. Create a list of strings and find the longest string in the list.
+
+void someStrings() {
+  var randomStrings = ['bayayi', 'akaki', 'dzmakaci'];
+  var findLongest = randomStrings.reduce((a, b) => a.length > b.length ? a : b);
+  print("This is for 7th exercise: $findLongest");
+}
+
+
 // 8. Create a list of words and count the number of occurrences of each word.
 // 9. Create a list of names and sort the list in alphabetical order.
 // 10. Create a list of scores for 5 players and find the average score.
