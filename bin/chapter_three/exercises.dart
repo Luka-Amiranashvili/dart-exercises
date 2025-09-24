@@ -1,10 +1,45 @@
 // Lists:
 
+void main() {
+  getFruits();
+}
+
 // 1. Create a list of 5 strings and print the third element.
+void getFruits() {
+  var fruits = ['banana', 'apple', 'watermelon', 'grapes', 'mango'];
+  print("This is for 1st exercise: ${fruits[2]}");
+
 // 2. Add 3 more elements to the list and print the entire list.
-// 3. Remove the first element from the list and print the remaining elements.
+
+  fruits.addAll(["pineapple", "strawberry", "peach"]);
+  print("This is for 2nd exercise: Now i added 3 more elements $fruits");
+
+  // 3. Remove the first element from the list and print the remaining elements.
+
+  fruits.remove('banana');
+  print("This is for 3rd exercise: $fruits");
+
 // 4. Sort the list in ascending order and print the result.
+
+  fruits.sort();
+  print("This is for 4th exercise: $fruits");
+
 // 5. Search for a specific element in the list and return its index.
+
+  var searchFruit = 'grapes';
+  var index = fruits.indexOf(searchFruit);
+
+  if (index != -1) {
+    print("This is for 5th exercise: $searchFruit is found at index $index");
+  } else {
+    print("This is for 5th exercise: $searchFruit not found in the list");
+  }
+} 
+
+
+
+
+
 // 6. Create a list of numbers from 1 to 10 and print the sum of all the elements.
 // 7. Create a list of strings and find the longest string in the list.
 // 8. Create a list of words and count the number of occurrences of each word.
