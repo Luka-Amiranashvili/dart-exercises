@@ -4,6 +4,7 @@ void main() {
   getFruits();
   numbers();
   someStrings();
+  countWord();
 }
 
 // 1. Create a list of 5 strings and print the third element.
@@ -54,8 +55,23 @@ void someStrings() {
   print("This is for 7th exercise: $findLongest");
 }
 
-
 // 8. Create a list of words and count the number of occurrences of each word.
+
+void countWord() {
+  var words = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+  var wordCount = <String, int>{};
+
+  for (var word in words) {
+    if (wordCount.containsKey(word)) {
+      wordCount[word] = wordCount[word]! + 1;
+    } else {
+      wordCount[word] = 1;
+    }
+  }
+
+  print("This is for 8th exercise: $wordCount");
+}
 // 9. Create a list of names and sort the list in alphabetical order.
 // 10. Create a list of scores for 5 players and find the average score.
 
