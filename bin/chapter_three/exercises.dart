@@ -2,6 +2,7 @@
 
 void main() {
   getFruits();
+  numbers();
 }
 
 // 1. Create a list of 5 strings and print the third element.
@@ -34,10 +35,13 @@ void getFruits() {
   } else {
     print("This is for 5th exercise: $searchFruit not found in the list");
   }
-} 
+}
 
-
-
+void numbers() {
+  var shnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var sumArray = shnumbers.reduce((a, b) => a + b);
+  print("This is for 6th exercise: $sumArray");
+}
 
 
 // 6. Create a list of numbers from 1 to 10 and print the sum of all the elements.
