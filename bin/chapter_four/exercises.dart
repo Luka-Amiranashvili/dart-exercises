@@ -14,6 +14,8 @@ void main() {
   print(acc);
   acc.deposit(100.50);
   acc.withdraw(50);
+  var person = Greeting("gio", 23, "saburtalo");
+  print(person.greet());
 }
 
 // 1. Copy Person and Emploee classes in a separate file and write toString methods for them.
@@ -185,3 +187,15 @@ class BankAccount {
 }
 
 // 9. Create a class called Person with properties such as name, age, and address. Add a method called greet that returns a personalized greeting to the person.
+
+class Greeting {
+  String name;
+  int age;
+  String address;
+
+  Greeting(this.name, this.age, this.address);
+
+  String greet() {
+    return "Hello, my name is $name, I am $age years old and I live at $address";
+  }
+}
