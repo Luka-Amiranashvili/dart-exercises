@@ -5,6 +5,9 @@ void main() {
   numbers();
   someStrings();
   countWord();
+  names();
+  scores();
+  mapp();
 }
 
 // 1. Create a list of 5 strings and print the third element.
@@ -73,10 +76,33 @@ void countWord() {
   print("This is for 8th exercise: $wordCount");
 }
 // 9. Create a list of names and sort the list in alphabetical order.
+
+void names() {
+  var listOfnames = ['gio', 'luka', 'nika'];
+  listOfnames.sort();
+  print("This is 9th exercise: $listOfnames");
+}
+
 // 10. Create a list of scores for 5 players and find the average score.
 
+void scores() {
+  var listOfScores = [10, 5, 2];
+  var sum = listOfScores.reduce((a, b) => a + b);
+  var avgScore = sum / listOfScores.length;
+  print("This is for 10th exercise: $avgScore");
+}
 
 // 11. Create a map with 3 key-value pairs and print one of the values.
+
+void mapp() {
+  var person = {
+    'name': 'Luka',
+    'age': 21,
+    'city': "tbilisi",
+  };
+  print("This is for 11th exercise: ${person['name']}");
+}
+
 // 12. Add 2 more key-value pairs to the map and print the entire map.
 // 13. Remove a specific key-value pair from the map and print the remaining elements.
 // 14. Find the length of the map and print the result.
