@@ -8,6 +8,8 @@ void main() {
   print("Is it classic? ${car.isClassic()}");
   var carInfo = CarInfo("Mercedes", "s-class", 2017, 9.600);
   print(carInfo.getInfo());
+  var book = Book("something", "some", 150, 5.50);
+  print(book.getDiscount());
 }
 
 // 1. Copy Person and Emploee classes in a separate file and write toString methods for them.
@@ -113,7 +115,35 @@ class CarInfo {
 
 // 6. Create a class called Student with properties such as name, age, grades, and studentID. Add a method called getAverage that calculates and returns the average of all the grades.
 
+class StudentInfo {
+  String name;
+  int age;
+  double grades;
+  int studentId;
+
+  StudentInfo(this.name, this.age, this.grades, this.studentId);
+}
+
 // 7. Create a class called Book with properties such as title, author, pages, and price. Add a method called getDiscount that calculates and returns the discount based on the number of pages.
+
+class Book {
+  String title;
+  String author;
+  int pages;
+  double price;
+
+  Book(this.title, this.author, this.pages, this.price);
+
+  getDiscount() {
+    double discount = (pages / 100) * 5;
+    if (discount > 30) discount = 30;
+    return discount;
+  }
+
+  double getPriceAfterdiscount() {
+    return price * (1 - getDiscount() / 100);
+  }
+}
 
 // 8. Create a class called BankAccount with properties such as accountNumber, balance, and owner. Add methods called deposit and withdraw that allow the user to deposit or withdraw money from the account.
 
