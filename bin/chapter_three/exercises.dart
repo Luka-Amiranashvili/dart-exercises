@@ -106,9 +106,13 @@ void mapp() {
 
   person.addAll({"car": "bmw", "born": "italy"});
   print("This is for 12th exercise: $person");
-}
 
 // 13. Remove a specific key-value pair from the map and print the remaining elements.
+
+  person.remove("name");
+  print("This is for exercise 13th: $person");
+}
+
 // 14. Find the length of the map and print the result.
 // 15. Check if a specific key exists in the map and return the result.
 // 16. Create a map of prices for 5 items and find the total cost of all the items.
