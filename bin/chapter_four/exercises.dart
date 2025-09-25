@@ -6,6 +6,8 @@ void main() {
   var car = Car("BWM", "X5", 1990);
   print("Info: $car");
   print("Is it classic? ${car.isClassic()}");
+  var carInfo = CarInfo("Mercedes", "s-class", 2017, 9.600);
+  print(carInfo.getInfo());
 }
 
 // 1. Copy Person and Emploee classes in a separate file and write toString methods for them.
@@ -95,6 +97,19 @@ class Car {
 }
 
 // 5. Create a class called Car with properties such as brand, model, year and price. Add a method called getInfo that returns the information about the car.
+
+class CarInfo {
+  String brand;
+  String model;
+  int year;
+  double price;
+
+  CarInfo(this.brand, this.model, this.year, this.price);
+
+  String getInfo() {
+    return "Brand: $brand, Model: $model, Year: $year, Price: $price";
+  }
+}
 
 // 6. Create a class called Student with properties such as name, age, grades, and studentID. Add a method called getAverage that calculates and returns the average of all the grades.
 
