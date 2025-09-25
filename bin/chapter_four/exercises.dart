@@ -1,4 +1,50 @@
-// 1. Copy Person and Emploee classes in a separate file and write toString methods for them. 
+void main() {
+  var rect = Rectangle(5, 2);
+  print("This is $rect");
+}
+
+// 1. Copy Person and Emploee classes in a separate file and write toString methods for them.
+class Person {
+  String name;
+  int age;
+  String address;
+
+  Person(this.name, this.age, this.address);
+
+  @override
+  String toString() {
+    return "Person(name: $name, age: $age, address: $address)";
+  }
+}
+
+class Employee {
+  String name;
+  int age;
+  String address;
+  int? salary;
+  Employee(this.name, this.age, this.address, this.salary);
+
+  @override
+  String toString() {
+    return ("Employee(name: $name, age: $age, address: $address, salary: $salary)");
+  }
+}
+
+class Rectangle {
+  double width;
+  double height;
+
+  Rectangle(this.width, this.height);
+
+  double perimeter() {
+    return 2 * (width + height);
+  }
+
+  @override
+  String toString() {
+    return "Rectangle(width: $width, height: $height)";
+  }
+}
 
 // 2. Create a class named "Rectangle" with attributes for width and height. Create methods for calculating the perimeter and area of a rectangle.
 
@@ -15,4 +61,3 @@
 // 8. Create a class called BankAccount with properties such as accountNumber, balance, and owner. Add methods called deposit and withdraw that allow the user to deposit or withdraw money from the account.
 
 // 9. Create a class called Person with properties such as name, age, and address. Add a method called greet that returns a personalized greeting to the person.
-
