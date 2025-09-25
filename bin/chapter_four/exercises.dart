@@ -10,6 +10,10 @@ void main() {
   print(carInfo.getInfo());
   var book = Book("something", "some", 150, 5.50);
   print(book.getDiscount());
+  var acc = BankAccount(15, 20, "Luka");
+  print(acc);
+  acc.deposit(100.50);
+  acc.withdraw(50);
 }
 
 // 1. Copy Person and Emploee classes in a separate file and write toString methods for them.
@@ -146,5 +150,38 @@ class Book {
 }
 
 // 8. Create a class called BankAccount with properties such as accountNumber, balance, and owner. Add methods called deposit and withdraw that allow the user to deposit or withdraw money from the account.
+
+class BankAccount {
+  int accountNumber;
+  double balance;
+  String owner;
+
+  BankAccount(this.accountNumber, this.balance, this.owner);
+
+  void deposit(double amount) {
+    if (amount > 0) {
+      balance += amount;
+      print("\$$amount deposited. New balance: \$$balance");
+    } else {
+      print("Deposit amount must be positive!");
+    }
+  }
+
+  void withdraw(double amount) {
+    if (amount > 0 && amount <= balance) {
+      balance -= amount;
+      print("\$$amount withdrawn. New balance: \$$balance");
+    } else if (amount > balance) {
+      print("balance should be more than amount, your balance is \$$balance");
+    } else {
+      print("Withdrawal amount must be psoitive");
+    }
+  }
+
+  @override
+  String toString() {
+    return ("BankAccount(accountNumber: $accountNumber, owner: $owner, balance: $balance)");
+  }
+}
 
 // 9. Create a class called Person with properties such as name, age, and address. Add a method called greet that returns a personalized greeting to the person.
