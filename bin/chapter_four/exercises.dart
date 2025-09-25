@@ -1,6 +1,8 @@
 void main() {
   var rect = Rectangle(5, 2);
   print("This is $rect");
+  var student = Student("luka", 24, [85, 90, 60, 60]);
+  print(student);
 }
 
 // 1. Copy Person and Emploee classes in a separate file and write toString methods for them.
@@ -30,6 +32,8 @@ class Employee {
   }
 }
 
+// 2. Create a class named "Rectangle" with attributes for width and height. Create methods for calculating the perimeter and area of a rectangle.
+
 class Rectangle {
   double width;
   double height;
@@ -46,9 +50,26 @@ class Rectangle {
   }
 }
 
-// 2. Create a class named "Rectangle" with attributes for width and height. Create methods for calculating the perimeter and area of a rectangle.
-
 // 3. Create a class named "Student" with attributes for name, age, and grades. Create methods for calculating the average grade of a student and for displaying the student's information.
+
+class Student {
+  String name;
+  int age;
+  List<double> grades;
+
+  Student(this.name, this.age, this.grades);
+
+  double averageGrade() {
+    if (grades.isEmpty) return 0;
+    double sum = grades.reduce((a, b) => a + b);
+    return sum / grades.length;
+  }
+
+  @override
+  String toString() {
+    return "Student(name: $name, age: $age, grades: $grades, average: ${averageGrade()})";
+  }
+}
 
 // 4. Create a class named "Car" with attributes for make, model, and year. Create methods for displaying the car's information and for determining if the car is a classic.
 
