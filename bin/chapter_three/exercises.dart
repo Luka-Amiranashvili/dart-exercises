@@ -101,9 +101,13 @@ void mapp() {
     'city': "tbilisi",
   };
   print("This is for 11th exercise: ${person['name']}");
-}
 
 // 12. Add 2 more key-value pairs to the map and print the entire map.
+
+  person.addAll({"car": "bmw", "born": "italy"});
+  print("This is for 12th exercise: $person");
+}
+
 // 13. Remove a specific key-value pair from the map and print the remaining elements.
 // 14. Find the length of the map and print the result.
 // 15. Check if a specific key exists in the map and return the result.
