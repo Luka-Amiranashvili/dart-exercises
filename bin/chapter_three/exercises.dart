@@ -115,9 +115,13 @@ void mapp() {
 // 14. Find the length of the map and print the result.
 
   print("This if for exercise 14th: ${person.length}");
-}
 
 // 15. Check if a specific key exists in the map and return the result.
+
+  bool hasAge = person.containsKey("age");
+  print("This is for 15th exercise: Does map contains 'age' ? $hasAge");
+}
+
 // 16. Create a map of prices for 5 items and find the total cost of all the items.
 // 17. Create a map of countries and their capitals. Print the name of the capital for a specific country.
 // 18. Create a map of employee names and their salaries. Find the average salary of all employees.
