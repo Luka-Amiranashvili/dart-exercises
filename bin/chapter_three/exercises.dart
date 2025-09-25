@@ -8,6 +8,9 @@ void main() {
   names();
   scores();
   mapp();
+  prices();
+  countriesNCapitals();
+  avgSalary();
 }
 
 // 1. Create a list of 5 strings and print the third element.
@@ -123,7 +126,27 @@ void mapp() {
 }
 
 // 16. Create a map of prices for 5 items and find the total cost of all the items.
+
+void prices() {
+  var mapOfPrices = [10, 20, 30, 40, 50];
+  var totalCost = mapOfPrices.reduce((a, b) => a + b);
+  print("This is for 16th exercise: $totalCost");
+}
+
 // 17. Create a map of countries and their capitals. Print the name of the capital for a specific country.
+
+void countriesNCapitals() {
+  var countries = {"Geo": "Tbilisi", "Usa": "new-york", "China": "Beijing"};
+  print("This is for 17th exercise: ${countries.values}");
+}
+
 // 18. Create a map of employee names and their salaries. Find the average salary of all employees.
+
+void avgSalary() {
+  var employee = {"gio": 50, "luka": 60, "nika": 80};
+  print(
+      "This is for 18th exercise: ${employee.values.reduce((a, b) => a + b)}");
+}
+
 // 19. Create a map of products and their ratings. Sort the map in ascending order of ratings.
 // 20. Create a map of flight routes and their distances. Find the shortest and longest routes.
