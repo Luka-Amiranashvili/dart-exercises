@@ -11,6 +11,8 @@ void main() {
   prices();
   countriesNCapitals();
   avgSalary();
+  ratings();
+  routes();
 }
 
 // 1. Create a list of 5 strings and print the third element.
@@ -149,4 +151,28 @@ void avgSalary() {
 }
 
 // 19. Create a map of products and their ratings. Sort the map in ascending order of ratings.
+
+void ratings() {
+  Map<String, double> products = {
+    "apple": 3.4,
+    "banana": 3.0,
+    "watermelon": 5.0,
+  };
+
+  var entries = products.entries.toList();
+  entries.sort((a, b) => a.value.compareTo(b.value));
+  print("This is for 19th exercise: $entries");
+}
+
 // 20. Create a map of flight routes and their distances. Find the shortest and longest routes.
+
+void routes() {
+  Map<String, double> flight = {
+    "Amsterdam": 3.4,
+    "Paris": 5.4,
+    "Brussell": 4.4,
+  };
+  var entries = flight.entries.toList();
+  var shortests = entries.reduce((a, b) => a.value < b.value ? a : b);
+  print("This is for 20th exercise: $shortests");
+}
