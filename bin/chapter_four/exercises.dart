@@ -3,6 +3,9 @@ void main() {
   print("This is $rect");
   var student = Student("luka", 24, [85, 90, 60, 60]);
   print(student);
+  var car = Car("BWM", "X5", 1990);
+  print("Info: $car");
+  print("Is it classic? ${car.isClassic()}");
 }
 
 // 1. Copy Person and Emploee classes in a separate file and write toString methods for them.
@@ -72,6 +75,24 @@ class Student {
 }
 
 // 4. Create a class named "Car" with attributes for make, model, and year. Create methods for displaying the car's information and for determining if the car is a classic.
+
+class Car {
+  String make;
+  String model;
+  int year;
+
+  Car(this.make, this.model, this.year);
+
+  @override
+  String toString() {
+    return "Car(make: $make, model: $model, year: $year)";
+  }
+
+  bool isClassic() {
+    int currentYear = DateTime.now().year;
+    return currentYear - year >= 20;
+  }
+}
 
 // 5. Create a class called Car with properties such as brand, model, year and price. Add a method called getInfo that returns the information about the car.
 
