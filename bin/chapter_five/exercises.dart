@@ -13,6 +13,10 @@ class Vehicle {
   void displayInfo() {
     print("Model: $model, Year: $year, Type: $type");
   }
+
+  void startEngine() {
+    print("The engine of the $type is starting.");
+  }
 }
 
 // Create subclasses for each type of vehicle: "Car", "Truck", and "Motorbike".
@@ -27,6 +31,11 @@ class Car extends Vehicle {
     super.displayInfo();
     print("Number of doors: $numDoors");
   }
+
+  @override
+  void startEngine() {
+    print("The engine of the car, $model's, is starting with a roar!");
+  }
 }
 
 class Truck extends Vehicle {
@@ -39,6 +48,11 @@ class Truck extends Vehicle {
   void displayInfo() {
     super.displayInfo();
     print("Load capacity: $loadCapacity tons");
+  }
+
+  @override
+  void startEngine() {
+    print("Truck $model's starts with!");
   }
 }
 
@@ -54,6 +68,11 @@ class MotorBike extends Vehicle {
     super.displayInfo();
     print("Has sidecar: ${hasSidecar ? "Yes" : "No"}");
   }
+
+  @override
+  void startEngine() {
+    print("Motorbike $model's engine revs up!");
+  }
 }
 
 void main() {
@@ -61,9 +80,9 @@ void main() {
   Truck myTruck = Truck(model: "Ford F-150", year: 2019, loadCapacity: 2.5);
   MotorBike myBike =
       MotorBike(model: "Harley Davidson", year: 2021, hasSidecar: false);
-  myCar.displayInfo();
-  myTruck.displayInfo();
-  myBike.displayInfo();
+  myCar.startEngine();
+  myTruck.startEngine();
+  myBike.startEngine();
 }
 
 
