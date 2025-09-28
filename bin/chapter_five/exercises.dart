@@ -1,8 +1,72 @@
 // 1.)
 // Create a base class named "Vehicle" with the following attributes: model, year, and type (e.g. car, truck, motorbike).
-// Create subclasses for each type of vehicle: "Car", "Truck", and "Motorbike".
 // Override the toString() method in each subclass to display the vehicle's information (model, year, and type).
 // In the main function, create objects for each type of vehicle and print their information using the toString() method.
+
+class Vehicle {
+  String model;
+  int year;
+  String type;
+
+  Vehicle({required this.model, required this.year, required this.type});
+
+  void displayInfo() {
+    print("Model: $model, Year: $year, Type: $type");
+  }
+}
+
+// Create subclasses for each type of vehicle: "Car", "Truck", and "Motorbike".
+
+class Car extends Vehicle {
+  int numDoors;
+  Car({required String model, required int year, required this.numDoors})
+      : super(model: model, year: year, type: "Car");
+
+  @override
+  void displayInfo() {
+    super.displayInfo();
+    print("Number of doors: $numDoors");
+  }
+}
+
+class Truck extends Vehicle {
+  double loadCapacity;
+
+  Truck({required String model, required int year, required this.loadCapacity})
+      : super(model: model, year: year, type: "Truck");
+
+  @override
+  void displayInfo() {
+    super.displayInfo();
+    print("Load capacity: $loadCapacity tons");
+  }
+}
+
+class MotorBike extends Vehicle {
+  bool hasSidecar;
+
+  MotorBike(
+      {required String model, required int year, required this.hasSidecar})
+      : super(model: model, year: year, type: "Motorbike");
+
+  @override
+  void displayInfo() {
+    super.displayInfo();
+    print("Has sidecar: ${hasSidecar ? "Yes" : "No"}");
+  }
+}
+
+void main() {
+  Car myCar = Car(model: "Toyota Camry", year: 2020, numDoors: 4);
+  Truck myTruck = Truck(model: "Ford F-150", year: 2019, loadCapacity: 2.5);
+  MotorBike myBike =
+      MotorBike(model: "Harley Davidson", year: 2021, hasSidecar: false);
+  myCar.displayInfo();
+  myTruck.displayInfo();
+  myBike.displayInfo();
+}
+
+
 // Create a method named "startEngine" in the base class "Vehicle". In each subclass, override the method to print a unique message that corresponds to the type of vehicle.
 // Call the "startEngine" method on each object and observe the unique message for each type of vehicle.
 
