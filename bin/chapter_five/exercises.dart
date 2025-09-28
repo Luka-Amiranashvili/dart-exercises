@@ -1,8 +1,3 @@
-// 1.)
-// Create a base class named "Vehicle" with the following attributes: model, year, and type (e.g. car, truck, motorbike).
-// Override the toString() method in each subclass to display the vehicle's information (model, year, and type).
-// In the main function, create objects for each type of vehicle and print their information using the toString() method.
-
 class Vehicle {
   String model;
   int year;
@@ -83,17 +78,33 @@ void main() {
   myCar.startEngine();
   myTruck.startEngine();
   myBike.startEngine();
-}
+  Customer customer1 = Customer("Luka", "Tbilisi");
+  SavingsAccount savings = SavingsAccount(1000.0);
+  CheckingAccount checking = CheckingAccount(500.0);
 
+  customer1.addAccount(savings);
+  customer1.addAccount(checking);
+
+  customer1.displayAccounts();
+  print('\nApplying interest...');
+  for (var account in customer1.accounts) {
+    account.applyInterest();
+  }
+
+  customer1.displayAccounts();
+
+  print(
+      '\nTotal interest earned: \$${customer1.totalInterestEarned().toStringAsFixed(2)}');
+}
 
 // Create a method named "startEngine" in the base class "Vehicle". In each subclass, override the method to print a unique message that corresponds to the type of vehicle.
 // Call the "startEngine" method on each object and observe the unique message for each type of vehicle.
 
-
 // 2.)
 // The task requires the use of classes and objects in Dart, as well
-// as inheritance and polymorphism to create a simulation of a bank system. 
+// as inheritance and polymorphism to create a simulation of a bank system.
 // In the simulation, you need to keep track of customers and their accounts,
+
 // where each customer can have multiple accounts.
 // There should be two types of accounts: Savings and Checking.
 // Each account should have its own interest rate.
@@ -101,7 +112,7 @@ void main() {
 // To begin, you should create a class for customers,
 // which would store information such as their name, address,
 // and any accounts they have. Next, create two separate classes
-// for savings and checking accounts, both of which should inherit 
+// for savings and checking accounts, both of which should inherit
 // from a common class for all types of accounts.
 
 // The savings account class should have a higher interest rate than the
@@ -118,21 +129,72 @@ void main() {
 // objects, inheritance, and polymorphism in Dart. You should aim to create a clear
 // and well-organized simulation that is easy to understand and modify as needed.
 
+abstract class Account {
+  double balance;
+  double interestRate;
 
+  Account(this.balance, this.interestRate);
 
+  double calculateInterest() {
+    return balance * (interestRate / 100);
+  }
 
+  void applyInterest() {
+    balance = balance + calculateInterest();
+  }
 
+  void displayInfo() {
+    print(
+        "Balance: \$${balance.toStringAsFixed(2)}, Interest Rate: $interestRate%");
+  }
+}
 
+class SavingsAccount extends Account {
+  SavingsAccount(double balance) : super(balance, 5.0);
 
+  @override
+  void displayInfo() {
+    print(
+        "Savings account -> Balance: \$${balance.toStringAsFixed(2)}, Interest Rate: $interestRate%");
+  }
+}
 
+class CheckingAccount extends Account {
+  CheckingAccount(double balance) : super(balance, 2.0);
 
+  @override
+  void displayInfo() {
+    print(
+        "Checking account -> Balance: \$${balance.toStringAsFixed(2)}, Interest Rate: $interestRate%");
+  }
+}
 
+class Customer {
+  String name;
+  String address;
+  List<Account> accounts = [];
 
+  Customer(this.name, this.address);
 
+  void addAccount(Account account) {
+    accounts.add(account);
+  }
 
+  void displayAccounts() {
+    print("Customer: $name, Address: $address");
+    for (var account in accounts) {
+      account.displayInfo();
+    }
+  }
 
-
-
+  double totalInterestEarned() {
+    double total = 0;
+    for (var account in accounts) {
+      total = total + account.calculateInterest();
+    }
+    return total;
+  }
+}
 
 
 
