@@ -8,6 +8,7 @@ void main() {
   print(sumOfEvens([1, 2, 3, 4, 5, 6]));
   print(square(5));
   print(multiplyByFactor([1, 2, 3, 4, 5], 3));
+  print(random(10)(1));
 }
 // 2. Write a function that takes two positional parameters (a and b),
 //    and one named parameter "operation" with a default value of "add". If "operation" is "add", return the sum of a and b, and if "operation" is "subtract", return the difference of a and b. Call this function with different arguments to test it.
@@ -45,6 +46,12 @@ var multiplyByFactor = (List<int> numbers, int factor) {
 // 6. Write a function that takes a list of integers and a lambda, and returns a list of integers where each integer
 //     is multiplied by the result of the lambda. Call this function with a list of integers and a lambda that returns
 //       a random number between 1 and 10, and print the resulting list.
+
+var random = (int max) {
+  return (int min) =>
+      min +
+      (max - min) * (DateTime(2024).millisecondsSinceEpoch % 1000) ~/ 1000;
+};
 
 // 7. Write a function that takes a list of integers and returns a closure that maintains a running total
 //      of the sum of the integers. Call this closure multiple times with different lists of integers and print
