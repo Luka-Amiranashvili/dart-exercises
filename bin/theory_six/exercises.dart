@@ -9,6 +9,7 @@ void main() {
   print(square(5));
   print(multiplyByFactor([1, 2, 3, 4, 5], 3));
   print(random(10)(1));
+  print(runningTotal()([1, 2, 3]));
 }
 // 2. Write a function that takes two positional parameters (a and b),
 //    and one named parameter "operation" with a default value of "add". If "operation" is "add", return the sum of a and b, and if "operation" is "subtract", return the difference of a and b. Call this function with different arguments to test it.
@@ -56,3 +57,11 @@ var random = (int max) {
 // 7. Write a function that takes a list of integers and returns a closure that maintains a running total
 //      of the sum of the integers. Call this closure multiple times with different lists of integers and print
 //       the resulting running totals.
+
+Function runningTotal() {
+  int total = 0;
+  return (List<int> numbers) {
+    total += numbers.reduce((a, b) => a + b);
+    return total;
+  };
+}
