@@ -1,6 +1,23 @@
 // 1. Write an anonymous function that takes two parameters (a and b) and returns their sum. Call this function and print the result.
 
+void main() {
+  var sum = (int a, int b) => a + b;
+  print(sum(3, 4)); // output: 7
+  print(calculate(10, 5, operation: "subtract"));
+  print(calculate(5, 15, operation: "add"));
+}
 // 2. Write a function that takes two positional parameters (a and b),
+
+int calculate(int a, int b, {String operation = 'add'}) {
+  if (operation == 'add') {
+    return a + b;
+  } else if (operation == 'subtract') {
+    return a - b;
+  } else {
+    throw ArgumentError('Invalid operation: $operation');
+  }
+}
+
 //    and one named parameter "operation" with a default value of "add". If "operation" is "add", return the sum of a and b, and if "operation" is "subtract", return the difference of a and b. Call this function with different arguments to test it.
 
 // 3. Write a lambda that takes a list of integers and returns the sum of all even numbers in the list.
