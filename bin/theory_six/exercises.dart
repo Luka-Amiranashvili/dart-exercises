@@ -5,8 +5,10 @@ void main() {
   print(sum(3, 4)); // output: 7
   print(calculate(10, 5, operation: "subtract"));
   print(calculate(5, 15, operation: "add"));
+  print(sumOfEvens([1, 2, 3, 4, 5, 6]));
 }
 // 2. Write a function that takes two positional parameters (a and b),
+//    and one named parameter "operation" with a default value of "add". If "operation" is "add", return the sum of a and b, and if "operation" is "subtract", return the difference of a and b. Call this function with different arguments to test it.
 
 int calculate(int a, int b, {String operation = 'add'}) {
   if (operation == 'add') {
@@ -18,11 +20,12 @@ int calculate(int a, int b, {String operation = 'add'}) {
   }
 }
 
-//    and one named parameter "operation" with a default value of "add". If "operation" is "add", return the sum of a and b, and if "operation" is "subtract", return the difference of a and b. Call this function with different arguments to test it.
-
 // 3. Write a lambda that takes a list of integers and returns the sum of all even numbers in the list.
 //     Call this lambda and print the result.
 
+var sumOfEvens = (List<int> numbers) {
+  return numbers.where((n) => n.isEven).reduce((a, b) => a + b);
+};
 // 4. Write a closure that returns a function that takes a parameter and returns the square of that parameter.
 //     Call this closure and assign the returned function to a variable. Then call that variable with different
 //     arguments to test it.
