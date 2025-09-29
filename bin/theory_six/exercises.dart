@@ -6,6 +6,7 @@ void main() {
   print(calculate(10, 5, operation: "subtract"));
   print(calculate(5, 15, operation: "add"));
   print(sumOfEvens([1, 2, 3, 4, 5, 6]));
+  print(square(5));
 }
 // 2. Write a function that takes two positional parameters (a and b),
 //    and one named parameter "operation" with a default value of "add". If "operation" is "add", return the sum of a and b, and if "operation" is "subtract", return the difference of a and b. Call this function with different arguments to test it.
@@ -27,6 +28,9 @@ var sumOfEvens = (List<int> numbers) {
   return numbers.where((n) => n.isEven).reduce((a, b) => a + b);
 };
 // 4. Write a closure that returns a function that takes a parameter and returns the square of that parameter.
+
+var square = (int x) => x * x;
+
 //     Call this closure and assign the returned function to a variable. Then call that variable with different
 //     arguments to test it.
 
