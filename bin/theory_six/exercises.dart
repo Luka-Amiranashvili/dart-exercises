@@ -1,7 +1,7 @@
 // 1. Write an anonymous function that takes two parameters (a and b) and returns their sum. Call this function and print the result.
+var sum = (int a, int b) => a + b;
 
 void main() {
-  var sum = (int a, int b) => a + b;
   print(sum(3, 4)); // output: 7
   print(calculate(10, 5, operation: "subtract"));
   print(calculate(5, 15, operation: "add"));
